@@ -66,7 +66,7 @@ namespace Jatek1
             }
             if (valasztottgep == elemek[2] && valasztottember == 3)
             {
-                Console.WriteLine("Vesztettél!");
+                Console.WriteLine("Döntetlen!");
             }
             Console.WriteLine("A gép választása: " + valasztottgep);
 
@@ -75,3 +75,4 @@ namespace Jatek1
         }
     }
 }
+
