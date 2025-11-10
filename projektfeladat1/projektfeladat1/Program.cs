@@ -26,7 +26,7 @@ namespace projektfeladat1
                     verseny(rand1);
                     break;
                 case 3:
-
+                    Akasztofa(rand1);
                     break;
                 case 4:
                     Environment.Exit(0);
@@ -247,9 +247,57 @@ namespace projektfeladat1
 
         }
 
-        public static void Akasztofa()
+        public static void Akasztofa(Random rand1)
         {
             string[] szavak = {"technológia","dolog","megértés","globalizáció","erő","nap","fenntarthatóság","integritás","vágyakozás","identitás","kultúra","szenvedély","transzformáció","egyenlőség","öröm","inspiráció"};
+            char tipp;
+            int szo = rand1.Next(0, szavak.Length);
+            char[] kivalsztottszo = new char[szavak[szo].Length];
+            char[] kiiras = new char[szavak[szo].Length];
+            int hibak = 0;
+            int szamlalo = 0;
+            char[] tippvolt = new char[44];
+            bool nyertel = false;   
+
+            Console.Clear();
+
+            for (int i = 0; i < szavak[szo].Length; i++)
+            {
+                kiiras[i] = '_';
+                Console.Write(kiiras[i]);
+            }
+            Console.WriteLine();
+
+            do
+            {
+                Console.WriteLine("Adja meg a tippet: ");
+                tipp = Convert.ToChar(Console.ReadLine());
+
+                Console.Clear();
+
+                for (int i = 0; i < szavak[szo].Length; i++)
+                {          
+                    if (szavak[szo][i] == tipp)
+                    {      
+                        kiiras[i] = tipp;
+                        szamlalo++;
+                        
+                       
+                    }
+                }
+
+                for (int i = 0; i < kiiras.Length; i++)
+                {
+                    Console.Write(kiiras[i]);
+                }
+                Console.WriteLine();
+
+                if (szamlalo == szavak[szo].Length)
+                {
+                    nyertel = true;
+                }
+            }
+            while(hibak < 6 &&  nyertel == false);
         }
 
         static void Main(string[] args)
