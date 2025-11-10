@@ -1,0 +1,7 @@
+D:\c#\projektfeladat1\projektfeladat1\bin\Debug\projektfeladat1.exe.config
+D:\c#\projektfeladat1\projektfeladat1\bin\Debug\projektfeladat1.exe
+D:\c#\projektfeladat1\projektfeladat1\bin\Debug\projektfeladat1.pdb
+D:\c#\projektfeladat1\projektfeladat1\obj\Debug\projektfeladat1.csproj.AssemblyReference.cache
+D:\c#\projektfeladat1\projektfeladat1\obj\Debug\projektfeladat1.csproj.CoreCompileInputs.cache
+D:\c#\projektfeladat1\projektfeladat1\obj\Debug\projektfeladat1.exe
+D:\c#\projektfeladat1\projektfeladat1\obj\Debug\projektfeladat1.pdb
