@@ -1,0 +1,8 @@
+H:\C#\Jatek1\Jatek1\obj\Debug\Jatek1.csproj.AssemblyReference.cache
+H:\C#\Jatek1\Jatek1\obj\Debug\Jatek1.csproj.CoreCompileInputs.cache
+H:\C#\Jatek1\Jatek1\bin\Debug\Jatek1.exe.config
+H:\C#\Jatek1\Jatek1\bin\Debug\Jatek1.exe
+H:\C#\Jatek1\Jatek1\bin\Debug\Jatek1.pdb
+H:\C#\Jatek1\Jatek1\obj\Debug\Jatek1.exe
+H:\C#\Jatek1\Jatek1\obj\Debug\Jatek1.pdb
+H:\C#\Jatek1\Jatek1\obj\Debug\Jatek1.exe.config
