@@ -12,6 +12,7 @@ namespace projektfeladat1
 
         public static void menu()
         {
+            Console.Clear();
             Random rand1 = new Random();
             Console.WriteLine("Játékok:\n (1.)Kő, Papír, Olló\n (2.)Verseny\n (3.)Akasztófa \n (4.)Kilépés");
             int jatek;
@@ -20,7 +21,7 @@ namespace projektfeladat1
             switch (jatek)
             {
                 case 1:
-
+                    KoPapirOllo(rand1);
                     break;
                 case 2:
                     verseny(rand1);
@@ -97,7 +98,7 @@ namespace projektfeladat1
                 Console.WriteLine("Döntetlen!");
             }
             Console.WriteLine("A gép választása: " + valasztottgep);
-            Console.WriteLine("(0.) Menü \n\n Játékok: \n (1.)Kő, Papír, Ollló \n (2.)Újra játszás \n (3.) Akasztófa \n (4.)Kilépés");
+            Console.WriteLine("(0.) Menü \n\n Játékok: \n (1.)Újra játszás \n (2.)Verseny \n (3.) Akasztófa \n (4.)Kilépés");
 
             int jatek;
             jatek = Convert.ToInt32(Console.ReadLine());
@@ -114,7 +115,7 @@ namespace projektfeladat1
                     verseny(rand1);
                     break;
                 case 3:
-
+                    Akasztofa(rand1);
                     break;
                 case 4:
                     Environment.Exit(0);
@@ -237,7 +238,7 @@ namespace projektfeladat1
                     verseny(rand1);
                     break;
                 case 3:
-
+                    Akasztofa(rand1);
                     break;
                 case 4:
                     Environment.Exit(0);
@@ -258,6 +259,7 @@ namespace projektfeladat1
             int szamlalo = 0;
             char[] tippvolt = new char[44];
             bool nyertel = false;   
+            int j = 0;
 
             Console.Clear();
 
@@ -268,6 +270,11 @@ namespace projektfeladat1
             }
             Console.WriteLine();
 
+            for (int i = 0; i < szavak[szo].Length; i++)
+            {
+                kivalsztottszo[i] = szavak[szo][i];
+            }
+
             do
             {
                 Console.WriteLine("Adja meg a tippet: ");
@@ -275,16 +282,41 @@ namespace projektfeladat1
 
                 Console.Clear();
 
+                bool volte = false;
+                
+
                 for (int i = 0; i < szavak[szo].Length; i++)
                 {          
-                    if (szavak[szo][i] == tipp)
+                    if (kivalsztottszo[i] == tipp)
                     {      
                         kiiras[i] = tipp;
                         szamlalo++;
-                        
-                       
+                        volte = true;
+                        kivalsztottszo[i] = ' ';
                     }
+                    
                 }
+                Console.WriteLine("Helyes tippek száma: " + szamlalo);
+                
+                if (volte == false)
+                {
+                    hibak++;
+                }
+
+                Console.WriteLine("Hibás tippek száma: " + hibak);
+
+
+                tippvolt[j] = tipp;
+                j++;
+                Console.WriteLine("Tippek: ");
+                for (int i = 0; i < tippvolt.Length;  i++)
+                {
+                    Console.Write(tippvolt[i]+ " ");
+                }
+                Console.WriteLine();
+                
+
+                
 
                 for (int i = 0; i < kiiras.Length; i++)
                 {
@@ -292,12 +324,48 @@ namespace projektfeladat1
                 }
                 Console.WriteLine();
 
+
+                
                 if (szamlalo == szavak[szo].Length)
                 {
                     nyertel = true;
                 }
             }
             while(hibak < 6 &&  nyertel == false);
+
+
+            if (nyertel == true)
+            {
+                Console.WriteLine("Nyertél, a helyes megoldás: " + szavak[szo]);
+            }
+            else
+            {
+                Console.WriteLine("Vesztettél, a helyes megoldás: " + szavak[szo]);
+            }
+            Console.WriteLine("(0.) Menü \n\n Játékok: \n (1.)Kő, Papír, Ollló \n (2.)Verseny \n (3.) Újra játszás \n (4.)Kilépés");
+
+            int jatek;
+            jatek = Convert.ToInt32(Console.ReadLine());
+
+            switch (jatek)
+            {
+                case 0:
+                    menu();
+                    break;
+                case 1:
+                    KoPapirOllo(rand1);
+                    break;
+                case 2:
+                    verseny(rand1);
+                    break;
+                case 3:
+                    Akasztofa(rand1);
+                    break;
+                case 4:
+                    Environment.Exit(0);
+                    break;
+
+            }
         }
 
         static void Main(string[] args)
